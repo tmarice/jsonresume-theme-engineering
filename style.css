@@ -2,7 +2,18 @@
 body {
     font-family: Georgia, serif;
     font-size: 11px;
-    margin: 24px 48px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background: #fff;
+}
+
+#resume {
+    max-width: 800px;
+    width: 100%;
+    padding: 24px 48px;
+    box-sizing: border-box;
 }
 
 h1 {
