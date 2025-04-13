@@ -5,14 +5,14 @@
         {{#> item title=organization subtitle=position location=location startDate=startDate endDate=endDate }}
         {{#if summary}}
         <div class="summary">
-            <p>{{summary}}</p>
+            <p>{{{summary}}}</p>
         </div>
         {{/if}}
 
         {{#if highlights.length}}
         <ul class="highlights">
             {{#each highlights}}
-            <li>{{.}}</li>
+            <li>{{{.}}}</li>
             {{/each}}
         </ul>
         {{/if}}
