@@ -2,7 +2,7 @@ HBS_TEMPLATES = $(sort $(wildcard partials/** views/** resume.hbs ))
 
 all: resume.png
 
-resume.json:
+resume.json: sample-resume.json
 	cp sample-resume.json resume.json
 
 resume.pdf: resume.json index.js  $(HBS_TEMPLATES)

@@ -6,7 +6,7 @@
     "email": "richard.hendriks@piedpiper.com",
     "phone": "(912) 555-4321",
     "website": "http://piedpiper.com",
-    "summary": "Richard hails from Tulsa. He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinals!) Before starting Pied Piper, he worked for Hooli as a part time software developer. While his work focuses on applied information theory, mostly optimizing lossless compression schema of both the length-limited and adaptive variants, his non-work interests range widely, everything from quantum computing to chaos theory. He could tell you about it, but THAT would NOT be a “length-limited” conversation!",
+    "summary": "Richard hails from <strong>Tulsa</strong>. He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinals!) Before starting Pied Piper, he worked for <a href='http://www.hooli.xyz/'>Hooli</a> as a part time software developer. While his work focuses on applied information theory, mostly optimizing lossless compression schema of both the length-limited and adaptive variants, his non-work interests range widely, everything from quantum computing to chaos theory. He could tell you about it, but THAT would NOT be a <em>“length-limited”</em> conversation!",
     "location": {
       "address": "Newell Road",
       "postalCode": "94303",
@@ -41,7 +41,7 @@
       "summary": "Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has consistently fielded high Weisman Scores™ that are not merely competitive, but approach the theoretical limit of lossless compression.",
       "highlights": [
         "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
-        "Successfully won Techcrunch Disrupt",
+        "Successfully won <a href='https://techcrunch.com/event-type/disrupt/'>Techcrunch Disrupt</a>",
         "Optimized an algorithm that holds the current world record for Weisman Scores"
       ]
     },
@@ -52,7 +52,7 @@
       "startDate": "2014-01-01",
       "endDate": "2014-04-06",
       "highlights": [
-        "Worked on optimizing the backend algorithms for Hooli"
+        "Worked on optimizing the backend algorithms for <a href='http://www.hooli.xyz/'>Hooli</a>"
       ]
     },
     {
@@ -62,7 +62,7 @@
       "startDate": "2013-01-01",
       "endDate": "2014-01-01",
       "highlights": [
-        "Contributed bugfixes and smaller features for Hooli"
+        "Contributed bugfixes and smaller features for <a href='http://www.hooli.xyz/'>Hooli</a>"
       ]
     }
   ],
@@ -90,8 +90,8 @@
       "endDate": "2014-01-01",
       "gpa": "GPA 4.0",
       "courses": [
-        "DB1101 - Basic SQL",
-        "CS2011 - Java Introduction"
+        "<strong>DB1101</strong> - Basic SQL",
+        "<strong>CS2011</strong> - Java Introduction"
       ]
     }
   ],
