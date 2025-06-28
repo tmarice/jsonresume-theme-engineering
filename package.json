@@ -18,7 +18,8 @@
   "license": "MIT",
   "scripts": {
     "start": "resume serve --theme .",
-    "export": "resume export --theme . resume.pdf"
+    "export": "resume export --theme . resume.pdf",
+    "test": "mocha test/*.test.js"
   },
   "dependencies": {
     "address-format": "0.0.3",
@@ -28,6 +29,12 @@
     "swag": "^0.7.0"
   },
   "devDependencies": {
-    "resume-cli": "^3.1.2"
+    "looks-same": "^9.0.1",
+    "mocha": "^10.0.0",
+    "pdf-img-convert": "^2.0.0",
+    "pdf-parse": "^1.1.1",
+    "pngjs": "^7.0.0",
+    "resume-cli": "^3.1.2",
+    "sinon": "^21.0.0"
   }
 }

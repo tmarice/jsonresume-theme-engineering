@@ -42,6 +42,10 @@ handlebars.registerHelper({
 });
 
 function render(resume) {
+  if (!resume || typeof resume !== 'object') {
+    throw new Error('Expected input to be a valid resume object');
+  }
+
   let dir = __dirname,
     css = fs.readFileSync(dir + '/style.css', 'utf-8'),
     resumeTemplate = fs.readFileSync(dir + '/resume.hbs', 'utf-8');

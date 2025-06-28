@@ -10,3 +10,7 @@ resume.pdf: resume.json index.js  $(HBS_TEMPLATES)
 
 resume.png: resume.pdf
 	pdftoppm -png resume.pdf > resume.png
+
+.PHONY: test
+test:
+	npm run test
