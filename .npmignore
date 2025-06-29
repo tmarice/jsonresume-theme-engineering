@@ -1,7 +1,18 @@
+# Development files
 node_modules/
 npm-debug.log
+.git/
+.github/
+.gitignore
+
+# Sample and development data
+sample-resume.json
+resume.json
 resume.html
 resume.pdf
-resume.json
+resume*.png
+
 .DS_Store
 public
+TODO.md
+*.patch
