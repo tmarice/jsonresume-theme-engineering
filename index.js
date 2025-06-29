@@ -1,23 +1,20 @@
 const
   fs = require('fs'),
-  handlebars = require('handlebars'),
-  handlebarsWax = require('handlebars-wax'),
+  path = require('path'),
+  Handlebars = require('handlebars'),
   addressFormat = require('address-format'),
-  moment = require('moment'),
-  Swag = require('swag');
+  moment = require('moment');
 
-Swag.registerHelpers(handlebars);
-
-handlebars.registerHelper({
+Handlebars.registerHelper({
 
   wrapURL: function (url) {
     const wrappedUrl = '<a href="' + url + '">' + url.replace(/.*?:\/\//g, '') + "</a>";
-    return new handlebars.SafeString(wrappedUrl);
+    return new Handlebars.SafeString(wrappedUrl);
   },
 
   wrapMail: function (address) {
     const wrappedAddress = '<a href="mailto:' + address + '">' + address + "</a>";
-    return new handlebars.SafeString(wrappedAddress);
+    return new Handlebars.SafeString(wrappedAddress);
   },
 
   formatAddress: function (address, city, region, postalCode, countryCode) {
@@ -48,12 +45,43 @@ function render(resume) {
 
   let dir = __dirname,
     css = fs.readFileSync(dir + '/style.css', 'utf-8'),
-    resumeTemplate = fs.readFileSync(dir + '/resume.hbs', 'utf-8');
+    resumeTemplate = fs.readFileSync(dir + '/resume.hbs', 'utf-8'),
+    partialsDir = path.join(dir, 'partials'),
+    viewsDir = path.join(dir, 'views');
 
-  let Handlebars = handlebarsWax(handlebars);
+  // Load partials from partialsDir
+  let partialFilenames = fs.readdirSync(partialsDir);
+  partialFilenames.forEach(function (filename) {
+    var matches = /^([^.]+).hbs$/.exec(filename);
+    if (!matches) {
+      return;
+    }
+    var name = matches[1];
+    var filepath = path.join(partialsDir, filename);
+    var template = fs.readFileSync(filepath, 'utf8');
 
-  Handlebars.partials(dir + '/views/**/*.{hbs,js}');
-  Handlebars.partials(dir + '/partials/**/*.{hbs,js}');
+    Handlebars.registerPartial(name, template);
+  });
+
+  // Load partials from viewsDir (if it exists)
+  try {
+    if (fs.existsSync(viewsDir)) {
+      let viewFilenames = fs.readdirSync(viewsDir);
+      viewFilenames.forEach(function (filename) {
+        var matches = /^([^.]+).hbs$/.exec(filename);
+        if (!matches) {
+          return;
+        }
+        var name = matches[1];
+        var filepath = path.join(viewsDir, filename);
+        var template = fs.readFileSync(filepath, 'utf8');
+
+        Handlebars.registerPartial(name, template);
+      });
+    }
+  } catch (err) {
+    console.error('Error loading views directory:', err);
+  }
 
   return Handlebars.compile(resumeTemplate)({
     css: css,
