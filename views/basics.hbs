@@ -14,7 +14,39 @@
         {{#if website~}}
         <span class="vertical-separator">{{wrapURL website}}</span>
         {{~/if}}
-    </div>
+
+    {{#if profiles}}
+            {{#each profiles}}
+                <span class="vertical-separator">
+                <a href="{{url}}" target="_blank" rel="noopener">
+                    {{!-- icon selection --}}
+                    {{#if (eq network "GitHub")}}
+                        <svg width="16" height="16" viewBox="0 0 16 16" aria-label="GitHub" fill="currentColor" role="img" style="vertical-align:middle; margin-right:4px;">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.54 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                        </svg>
+                    {{else}}
+                        {{#if (eq network "Twitter")}}
+                            <svg width="16" height="16" viewBox="0 0 24 24" aria-label="X/Twitter" fill="currentColor" role="img" style="vertical-align:middle; margin-right:4px;">
+                                <path d="M23.953 4.569a10 10 0 0 1-2.825.775 4.958 4.958 0 0 0 2.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 0 0-8.384 4.482A13.978 13.978 0 0 1 1.671 3.149a4.822 4.822 0 0 0-.666 2.475 4.92 4.92 0 0 0 2.188 4.1 4.903 4.903 0 0 1-2.228-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 0 1-2.224.084 4.928 4.928 0 0 0 4.6 3.417A9.867 9.867 0 0 1 .96 19.539a13.94 13.94 0 0 0 7.548 2.212c9.057 0 14.01-7.496 14.01-13.986 0-.21-.005-.423-.015-.634A9.936 9.936 0 0 0 24 4.59z"/>
+                            </svg>
+                        {{else}}
+                            {{#if (eq network "LinkedIn")}}
+                                <svg width="16" height="16" viewBox="0 0 448 512" aria-label="LinkedIn" fill="currentColor" role="img" style="vertical-align:middle; margin-right:4px;">
+                                    <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.87 0 54.05 0 24.23 24.09 .0 53.79 .0s53.79 24.23 53.79 54.05c0 29.82-24.1 54.05-53.79 54.05zM447.9 448h-92.68V302.4c0-34.7-.7-79.3-48.3-79.3-48.3 0-55.7 37.7-55.7 76.6V448h-92.7V148.9h89V196h1.3c12.4-23.4 42.6-48.3 87.6-48.3 93.7 0 111 61.7 111 141.9V448z"/>
+                                </svg>
+                            {{else}}
+                                <svg width="16" height="16" viewBox="0 0 24 24" aria-label="{{network}}" fill="currentColor" role="img" style="vertical-align:middle; margin-right:4px;">
+                                    <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4v2h-4c-.61 0-1.1.49-1.1 1.1s.49 1.1 1.1 1.1h4v2h-4c-1.71 0-3.1-1.39-3.1-3.1zm5.3-1h6.6v2H9.2v-2zm10.8-3h-4v2h4c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1h-4v2h4c1.71 0 3.1-1.39 3.1-3.1s-1.39-3.1-3.1-3.1z"/>
+                                </svg>
+                            {{/if}}
+                        {{/if}}
+                    {{/if}}
+                {{username}}
+                </a>
+                </span>
+            {{/each}}
+    {{/if}}
+
     {{#if summary}}
     <div class="summary">
         <h2>Summary</h2>

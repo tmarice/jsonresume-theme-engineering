@@ -38,6 +38,13 @@ Handlebars.registerHelper({
   },
 });
 
+Handlebars.registerHelper('eq', (a, b) => {
+  if (typeof a === 'string' && typeof b === 'string') {
+    return a.toLowerCase() === b.toLowerCase();
+  }
+  return a === b;
+});
+
 function render(resume) {
   if (!resume || typeof resume !== 'object') {
     throw new Error('Expected input to be a valid resume object');
