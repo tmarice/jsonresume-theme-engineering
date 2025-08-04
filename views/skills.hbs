@@ -3,14 +3,7 @@
     <h2>Skills</h2>
     <ul class="item">
         <li>
-        {{#each resume.skills}}
-            {{#if (eq level "Master")}}
-                <strong>{{name}}</strong>
-            {{else}}
-                {{name}}
-            {{/if}}
-            {{#unless @last}}, {{/unless}}
-        {{/each}}
+        {{#each resume.skills}}{{#if (eq level "Master")}}<strong>{{name}}</strong>{{else}}{{name}}{{/if}}{{#unless @last}}, {{/unless}}{{/each}}
         </li>
     </ul>
 </section>
