@@ -2,17 +2,16 @@
 <section id="skills">
     <h2>Skills</h2>
     <ul class="item">
-        {{#each resume.skills}}
         <li>
-            {{#if name}}
-            {{#if keywords.length}}
-            <strong>{{name}}</strong>: {{#each keywords}}{{.}}{{#unless @last}}, {{/unless}}{{/each}}
+        {{#each resume.skills}}
+            {{#if (eq level "Master")}}
+                <strong>{{name}}</strong>
             {{else}}
-            <strong>{{name}}</strong>
+                {{name}}
             {{/if}}
-            {{/if}}
-        </li>
+            {{#unless @last}}, {{/unless}}
         {{/each}}
+        </li>
     </ul>
 </section>
 {{/if}}
