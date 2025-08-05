@@ -39,6 +39,10 @@ a {
     color: black;
 }
 
+#work.item>.item-header {
+    font-size: 1.2em;
+}
+
 .item {
     margin-top: 8px;
 }
