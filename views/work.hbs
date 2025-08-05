@@ -8,7 +8,7 @@
         <ul class="highlights">
             {{#each highlights}}
             <li>
-                {{if this.subitems.length}}
+                {{#if this.subitems.length}}
                 {{{this.text}}}
                 <ul>
                     {{#each this.subitems}}
