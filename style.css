@@ -39,7 +39,7 @@ a {
     color: black;
 }
 
-#work.item>.item-header {
+#work>.item>.item-header {
     font-size: 1.2em;
 }
 
