@@ -7,7 +7,18 @@
         {{#if highlights.length}}
         <ul class="highlights">
             {{#each highlights}}
-            <li>{{{.}}}</li>
+            <li>
+                {{if this.subitems.length}}
+                {{{this.text}}}
+                <ul>
+                    {{#each this.subitems}}
+                    <li>{{{.}}}</li>
+                    {{/each}}
+                </ul>
+                {{else}}
+                {{{.}}}
+                {{/if}}
+            </li>
             {{/each}}
         </ul>
         {{/if}}
