@@ -10,7 +10,6 @@
             <li>
                 {{#if this.subitems.length}}
                 {{#if this.important}}<strong>{{{this.text}}}</strong>{{else}}{{{this.text}}}{{/if}}
-                {{#if this.subitems.length}}
                 <ul>
                     {{#each this.subitems}}
                     <li>{{{.}}}</li>
