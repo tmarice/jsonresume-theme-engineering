@@ -60,6 +60,11 @@ a {
     font-style: italic;
 }
 
+.item>.item-header>.item-header-subtitle>.item-header-description {
+    font-weight: normal;
+        font-size: 0.8em;
+}
+
 .item>.item-details {
     float: right;
     text-align: right;

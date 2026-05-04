@@ -6,6 +6,12 @@
     {{/if}}
     {{#if subtitle}}
     <div class="item-header-subtitle">
+        {{#if description}}
+        <span class="item-header-description">
+            {{description}}
+            <br/>
+        </span>
+        {{/if}}
         {{subtitle}}
     </div>
     {{/if}}
